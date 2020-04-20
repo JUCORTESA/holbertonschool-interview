@@ -26,11 +26,9 @@ def canUnlockAll(boxes):
         for num in arr:
             if box in stack:
                 box = num
-                if num not in stack:
+                if num not in stack and num is not None:
                     stack.append(num)
                     break
-                else:
-                    continue
     stack.sort()
     if stack == aux:
         return True

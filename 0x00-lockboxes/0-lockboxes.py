@@ -12,16 +12,15 @@ def canUnlockAll(boxes):
     Returns:
         True if all boxes can be opened, else return False
     """
-    if (len(boxes) == 0 or type(boxes) is not list):
+    if (len(boxes) < 1 or type(boxes) is not list):
         return False
-    for elem in boxes:
-        if type(elem) is not list:
-            return False
     checkbox = {}
     stack = [0]
+    aux = []
 
     for key in range(len(boxes)):
         checkbox[key] = boxes[key]
+        aux.append(key)
     for box, arr in checkbox.items():
         box = 0
         for num in arr:
@@ -30,8 +29,10 @@ def canUnlockAll(boxes):
                 if num not in stack:
                     stack.append(num)
                     break
+                else:
+                    continue
     stack.sort()
-    if len(stack) == len(boxes):
+    if stack == aux:
         return True
     else:
         return False

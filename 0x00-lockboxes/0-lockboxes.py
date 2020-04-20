@@ -19,11 +19,9 @@ def canUnlockAll(boxes):
             return False
     checkbox = {}
     stack = [0]
-    aux = []
 
     for key in range(len(boxes)):
         checkbox[key] = boxes[key]
-        aux.append(key)
     for box, arr in checkbox.items():
         box = 0
         for num in arr:
@@ -33,7 +31,7 @@ def canUnlockAll(boxes):
                     stack.append(num)
                     break
     stack.sort()
-    if stack == aux:
+    if len(stack) == len(boxes):
         return True
     else:
         return False

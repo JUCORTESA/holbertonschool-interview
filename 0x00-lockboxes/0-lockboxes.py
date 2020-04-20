@@ -12,6 +12,11 @@ def canUnlockAll(boxes):
     Returns:
         True if all boxes can be opened, else return False
     """
+    if (len(boxes) == 0 or type(boxes) is not list):
+        return False
+    for elem in boxes:
+        if type(elem) is not list:
+            return False
     checkbox = {}
     stack = [0]
     aux = []

@@ -21,14 +21,19 @@ def canUnlockAll(boxes):
     for key in range(len(boxes)):
         checkbox[key] = boxes[key]
         aux.append(key)
-    for box, arr in checkbox.items():
-        box = 0
-        for num in arr:
-            if box in stack:
-                box = num
-                if num not in stack and num is not None:
+    box = 0
+    i = 0
+    while i < len(aux):
+        for num in checkbox[box]:
+            if box in stack or num in aux:
+                if num not in stack and num is not None and num in aux:
                     stack.append(num)
+                    box = num
+            else:
+                for i in stack:
+                    box = stack[i]
                     break
+        i += 1
     stack.sort()
     if stack == aux:
         return True

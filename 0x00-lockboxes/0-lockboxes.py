@@ -29,7 +29,6 @@ def canUnlockAll(boxes):
                 if num not in stack and num is not None and num in aux:
                     stack.append(num)
                     box = num
-
         i += 1
     stack.sort()
     if stack == aux:

@@ -29,7 +29,15 @@ def canUnlockAll(boxes):
                 if num not in stack and num is not None and num in aux:
                     stack.append(num)
                     box = num
+            for j in range(len(stack)):
+                box = stack[j]
+                for num in checkbox[box]:
+                    if num in aux and num not in stack:
+                        stack.append(num)
+                        break
         i += 1
+    print(stack)
+    print(aux)
     stack.sort()
     if stack == aux:
         return True

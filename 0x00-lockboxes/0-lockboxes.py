@@ -14,30 +14,18 @@ def canUnlockAll(boxes):
     """
     if (len(boxes) < 1 or type(boxes) is not list):
         return False
-    checkbox = {}
-    stack = [0]
-    aux = []
 
-    for key in range(len(boxes)):
-        checkbox[key] = boxes[key]
-        aux.append(key)
-    box = 0
+    open_box = [0]
     i = 0
-    while i < len(aux):
-        for num in checkbox[box]:
-            if box in stack or num in aux:
-                if num not in stack and num is not None and num in aux:
-                    stack.append(num)
-                    box = num
-            for j in range(len(stack)):
-                box = stack[j]
-                for num in checkbox[box]:
-                    if num in aux and num not in stack:
-                        stack.append(num)
-                        break
+    while i < len(boxes):
+        if i >= len(open_box):
+            return False
+        if boxes[open_box[i]] is not None:
+            for key in boxes[open_box[i]]:
+                if key not in open_box and key < len(boxes):
+                    open_box.append(key)
         i += 1
-    stack.sort()
-    if stack == aux:
+    if len(open_box) == len(boxes):
         return True
     else:
         return False

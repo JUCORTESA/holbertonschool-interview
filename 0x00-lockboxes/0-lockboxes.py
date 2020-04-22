@@ -36,8 +36,6 @@ def canUnlockAll(boxes):
                         stack.append(num)
                         break
         i += 1
-    print(stack)
-    print(aux)
     stack.sort()
     if stack == aux:
         return True

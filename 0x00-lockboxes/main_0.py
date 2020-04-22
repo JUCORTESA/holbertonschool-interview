@@ -4,46 +4,56 @@ canUnlockAll = __import__('0-lockboxes').canUnlockAll
 
 boxes = [[1], [2], [3], [4], []]
 print(canUnlockAll(boxes))
+print("Expected: True")
 print("0")
 print("*"*20)
 
 boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
 print(canUnlockAll(boxes))
+print("Expected: True")
+print(boxes)
 print("1")
 print("*"*20)
 
 boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
 print(canUnlockAll(boxes))
+print("Expected: False")
 print("2")
 print("*"*20)
 
 boxes = [[1, 4, 6], [2, 20], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
 print(canUnlockAll(boxes))
+print("Expected: True")
 print("3")
 print("*"*20)
 
 boxes = [[], [], [], [], [], [], [6]]
 print(canUnlockAll(boxes))
+print("Expected: False")
 print("4")
 print("*"*20)
 
 boxes = [[1], [1], [], [], [], [], []]
 print(canUnlockAll(boxes))
+print("Expected: False")
 print("5")
 print("*"*20)
 
 boxes = [[3], [], [], [], [], [], []]
 print(canUnlockAll(boxes))
+print("Expected: False")
 print("6")
 print("*"*20)
 
 boxes = [[34], [], [], [], [], [], []]
 print(canUnlockAll(boxes))
+print("Expected: False")
 print("7")
 print("*"*20)
 
 boxes = [[1],[2],[3],[],[]],[[5],[6]]
 print(canUnlockAll(boxes))
+print("Expected: False")
 print("8")
 print("*"*20)
 

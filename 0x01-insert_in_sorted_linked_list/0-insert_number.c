@@ -10,17 +10,32 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
+	listint_t *aux;
 	listint_t *new;
 
-	if (*head == NULL || head == NULL)
+	if (head == NULL)
 		return (NULL);
 
-	new = add_nodeint_end(&head, number);
+	/* Create and a new node */
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = number;
 
-	if (new->n < (*head)->n)
+	/* If new is smaller than head, replace head */
+	if (new->n <= (*head)->n)
 	{
 		new->next = *head;
 		*head = new;
-		return (new);
 	}
+	/* else: new is the highest, therefore at the end */
+	else
+	{
+		aux = *head;
+		while (aux->next != NULL && (aux->next->n < number))
+			aux = aux->next;
+		new->next = aux->next;
+		aux->next = new;
+	}
+	return (new);
 }

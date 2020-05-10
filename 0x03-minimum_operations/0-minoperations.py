@@ -13,10 +13,10 @@ def minOperations(n):
     if type(n) is not int or n < 2:
         return 0
     operation = 0
-    for i in range(2, n):
-        while(n % i == 0):  # check if problem can be broken into smaller prob
-            operation += i  # if yes then add n of smaller problems to result.
+    for i in range(2, int(n ** (1 / 2))):  # sqrt limit for faster algorithm
+        while n % i == 0:  # check if can be divided as Least Common Multiple
+            operation += i  # if yes then add that multiple.
             n = n/i
     if n > 1:  # if is prime number
         operation += n
-    return operation
+    return int(operation)

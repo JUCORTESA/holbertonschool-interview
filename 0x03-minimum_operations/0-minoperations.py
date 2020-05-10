@@ -17,4 +17,6 @@ def minOperations(n):
         while(n % i == 0):  # check if problem can be broken into smaller prob
             operation += i  # if yes then add n of smaller problems to result.
             n = n/i
+    if n > 1:  # if is prime number
+        operation += n
     return operation

@@ -66,7 +66,6 @@ void topple(int grid1[3][3], int sandpiles[3][3])
 			}
 		}
 	}
-	return (sandpiles);
 }
 /**
  * print_sandpile - prints a grid

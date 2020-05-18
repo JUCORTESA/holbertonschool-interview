@@ -53,7 +53,7 @@ void topple(int grid1[3][3], int sandpiles[3][3])
  * print_sandpile - prints a grid
  * @grid: grid to print
  */
-void print_sandpile(int grid[3][3])
+static void print_sandpile(int grid[3][3])
 {
 	int i, j;
 

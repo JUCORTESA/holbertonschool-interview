@@ -4,6 +4,7 @@
  * add - adds 2 grids
  * @grid1: 1st grid to add
  * @grid2: 2nd grid to add
+ * Return: None
  */
 void add(int grid1[3][3], int grid2[3][3])
 {
@@ -20,6 +21,7 @@ void add(int grid1[3][3], int grid2[3][3])
  * topple - topples a grid
  * @grid1: 1st grid to add
  * @sandpiles: aux grid
+ * Return: None
  */
 void topple(int grid1[3][3], int sandpiles[3][3])
 {
@@ -52,6 +54,7 @@ void topple(int grid1[3][3], int sandpiles[3][3])
 /**
  * print_sandpile - prints a grid
  * @grid: grid to print
+ * Return: None
  */
 static void print_sandpile(int grid[3][3])
 {
@@ -92,6 +95,7 @@ int stable(int grid[3][3])
  * sandpiles_sum - adds 2 grids and print grid1
  * @grid1: 1st grid to add
  * @grid2: 2nd grid to add
+ * Return: None
  */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {

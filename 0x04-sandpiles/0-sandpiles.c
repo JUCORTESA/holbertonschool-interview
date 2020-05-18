@@ -1,22 +1,4 @@
 #include "sandpiles.h"
-/**
- * sandpiles_sum - adds 2 grids and print grid1
- * @grid1: 1st grid to add
- * @grid2: 2nd grid to add
- */
-void sandpiles_sum(int grid1[3][3], int grid2[3][3])
-{
-	int sandpiles[3][3];
-
-	add(grid1, grid2);
-	while (stable(grid1) == 0)
-	{
-		printf("=\n");
-		print_sandpile(grid1);
-		topple(grid1, sandpiles);
-		add(grid1, sandpiles);
-	}
-}
 
 /**
  * add - adds 2 grids
@@ -105,4 +87,22 @@ int stable(int grid[3][3])
 		}
 	}
 	return (1);
+}
+/**
+ * sandpiles_sum - adds 2 grids and print grid1
+ * @grid1: 1st grid to add
+ * @grid2: 2nd grid to add
+ */
+void sandpiles_sum(int grid1[3][3], int grid2[3][3])
+{
+	int sandpiles[3][3];
+
+	add(grid1, grid2);
+	while (stable(grid1) == 0)
+	{
+		printf("=\n");
+		print_sandpile(grid1);
+		topple(grid1, sandpiles);
+		add(grid1, sandpiles);
+	}
 }

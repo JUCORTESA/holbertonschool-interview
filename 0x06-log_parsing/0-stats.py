@@ -35,3 +35,4 @@ except KeyboardInterrupt:
     for key, value in input.items():
         if input[key] != 0:
             print("{}: {}".format(key, value))
+    raise

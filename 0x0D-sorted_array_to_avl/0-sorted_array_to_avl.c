@@ -33,11 +33,10 @@ avl_t *newNode(int data, avl_t *left, avl_t *right)
 avl_t *sortedArrayToBST(int *array, int start, int end)
 {
 	avl_t *root, *left, *right;
+	int mid = (start + end) / 2;
 
 	if (start > end)
 		return (NULL);
-
-	int mid = (start + end) / 2;
 
 	left = sortedArrayToBST(array, start, mid - 1);
 	right = sortedArrayToBST(array, mid + 1, end);

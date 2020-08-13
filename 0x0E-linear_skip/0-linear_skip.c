@@ -4,7 +4,8 @@
  * @prev: prev pointer
  * @actual: actual pointer
  * @value: value to search
- * Return: Node where the value is located or NULL if the value couldn't be find
+ * Return: Node where the value is located or
+ * NULL if the value couldn't be find
  */
 skiplist_t *search(skiplist_t *prev, skiplist_t *actual, int value)
 {
@@ -27,25 +28,34 @@ skiplist_t *search(skiplist_t *prev, skiplist_t *actual, int value)
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	skiplist_t *prev, *actual;
+	skiplist_t *actual, *prev;
+	size_t act_i, pre_i;
 
 	if (!list)
 		return (NULL);
+
 	actual = list;
-	while (actual)
+	while (actual->express != NULL)
 	{
 		prev = actual;
-		if (actual->express)
-			actual = actual->express;
-		else
-		{
-			while (actual->next)
-				actual = actual->next;
-			break;
-		}
-		printf("Value checked at index [%li] = [%i]\n", actual->index, actual->n);
+		actual = actual->express;
+		act_i = actual->index;
+		pre_i = prev->index;
+		printf("Value checked at index [%lu] = [%i]\n", act_i,
+		       actual->n);
+		if (prev->n > value && prev->index == 0)
+			return (NULL);
 		if (actual->n >= value)
-			return (search(prev, actual, value));
+			break;
 	}
+	if (!actual->express && actual->n < value)
+	{
+		prev = actual;
+		pre_i = prev->index;
+		while (actual->next)
+			actual = actual->next;
+		act_i = actual->index;
+	}
+	printf("Value found between indexes [%lu] and [%lu]\n", pre_i, act_i);
 	return (search(prev, actual, value));
 }

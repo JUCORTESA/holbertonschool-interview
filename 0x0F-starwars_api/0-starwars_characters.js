@@ -4,11 +4,9 @@ let request = '';
 let id = '';
 let url = '';
 
-
 request = require('request');
 id = process.argv[2];
 url = 'https://swapi-api.hbtn.io/api/films/' + id;
-
 
 const myRequest = (url) => {
   return new Promise(function (resolve, reject) {

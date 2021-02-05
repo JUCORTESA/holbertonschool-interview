@@ -30,9 +30,6 @@
   0x13 | [Count it!](./0x13-count_it) | Write a recursive function that queries the Reddit API. 
   0x14 | [Heap Extract](./0x14-heap_extract) | Write a function that extracts the root node of a Max Binary Heap. 
   0x15 | [Infinite Multiplication](./0x15-infinite_multiplication) | Write a program that multiplies two positive numbers. 
-  0x16 | [Rotate 2D Matrix](./0x16-rotate_2d_matrix) | Given an n x n 2D matrix, rotate it 90 degrees clockwise. 
-  0x17 | [Find the Loop](./0x17-find_the_loop) | Write a function that finds the loop in a linked list. 
-  0x18 | [Merge Sort](./0x18-merge_sort) | Write a function that sorts an array of integers in ascending order using the Merge Sort algorithm. 
-  0x19 | [Making Change](./0x19-making_change) | Given a pile of coins of different values, determine the fewest number of coins needed to meet a given amount total. 
+
   
 ---
